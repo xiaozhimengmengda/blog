@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block bloglist %}
+{% for obj in  object_list %}
+<h3><a href="{% url 'article:detail' obj.pk %}">{{ obj.title }}</a></h3>
+<figure><img src="{{ obj.img.url }}" alt="{{ obj.title }}"></figure>
+<ul>
+
+  <p> {{ obj.description }}</p>
+  <a title="{{ obj.title }}" href="{% url 'article:detail' obj.pk %}" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
+</ul>
+
+<p class="dateview"><span>{{ obj.create_time }}<span>作者：{{ obj.user }}</span> <span>个人博客：[<a href="#">{{ obj.category }}</a>]</span></p>
+{% endfor %}
+ <ul id="page">
+            {% if page_obj.has_previous %}
+                <li><a href="/article/index/?page={{ page_obj.previous_page_number }}">上一页</a></li>
+            {% endif %}
+
+            {% for num in page_obj.paginator.page_range %}
+                <li><a href="/article/index/?page={{ num }}">{{ num }}</a></li>
+            {% endfor %}
+
+
+            {% if page_obj.has_next %}
+                <li><a href="/article/index/?page={{ page_obj.next_page_number }}">下一页</a></li>
+            {% endif %}
+
+        </ul>
+{% endblock %}
+
