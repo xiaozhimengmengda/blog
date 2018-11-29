@@ -2,30 +2,61 @@
 
 {% block bloglist %}
 {% for obj in  object_list %}
-<h3><a href="{% url 'article:detail' obj.pk %}">{{ obj.title }}</a></h3>
-<figure><img src="{{ obj.img.url }}" alt="{{ obj.title }}"></figure>
-<ul>
 
-  <p> {{ obj.description }}</p>
-  <a title="{{ obj.title }}" href="{% url 'article:detail' obj.pk %}" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
-</ul>
+<article class="post post-{{ obj.pk }}}">
+    <header class="entry-header">
+        <h1 class="entry-title">
+            <a href="{% url 'article:detail' obj.pk %}">{{ obj.title }}</a>
+        </h1>
+        <div class="entry-meta">
+            <span class="post-category"><a href="{% url 'article:detail' obj.pk %}">{{ obj.title }}</a></span>
+            <span class="post-date"><a href="#"><time class="entry-date"
+                                                      datetime="{{ obj.create_time }}">{{ obj.create_time }}</time></a></span>
+        </div>
+    </header>
+    <div class="entry-content clearfix ">
+        <h5>{{ obj.description | safe}}</h5>
+        <div class="read-more cl-effect-14">
+            <a href="{% url 'article:detail' obj.pk %}"  target="_blank" class="more-link">继续阅读 <span class="meta-nav">→</span></a>
+        </div>
+    </div>
+</article>
 
-<p class="dateview"><span>{{ obj.create_time }}<span>作者：{{ obj.user }}</span> <span>个人博客：[<a href="#">{{ obj.category }}</a>]</span></p>
 {% endfor %}
- <ul id="page">
-            {% if page_obj.has_previous %}
-                <li><a href="/article/index/?page={{ page_obj.previous_page_number }}">上一页</a></li>
-            {% endif %}
+<div class="bottom_footer">
+    <ul id="page">
+        {% if page_obj.has_previous %}
+        <li><a href="/article/index/?page={{ page_obj.previous_page_number }}">上一页</a></li>
+        {% endif %}
 
-            {% for num in page_obj.paginator.page_range %}
-                <li><a href="/article/index/?page={{ num }}">{{ num }}</a></li>
-            {% endfor %}
+        {% for num in page_obj.paginator.page_range %}
+        <li><a href="/article/index/?page={{ num }}">{{ num }}</a></li>
+        {% endfor %}
 
+        {% if page_obj.has_next %}
+        <li><a href="/article/index/?page={{ page_obj.next_page_number }}">下一页</a></li>
+        {% endif %}
 
-            {% if page_obj.has_next %}
-                <li><a href="/article/index/?page={{ page_obj.next_page_number }}">下一页</a></li>
-            {% endif %}
-
-        </ul>
+    </ul>
+</div>
 {% endblock %}
 
+{% block news_article %}
+{% for obj in  object_list %}
+<li>
+    <a href="{% url 'article:detail' obj.pk %}">{{ obj.title }}</a>
+</li>
+
+{% endfor %}
+{% endblock %}
+
+
+{% block news_time %}
+{% for obj in  object_list %}
+<li>
+    <a href="{% url 'article:detail' obj.pk %}">{{ obj.create_time }}</a>
+</li>
+
+{% endfor %}
+
+{% endblock %}

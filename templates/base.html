@@ -3,153 +3,195 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>江南墨卷</title>
-    <meta name="keywords" content="个人博客模板古典系列之――江南墨卷" />
-    <meta name="description" content="个人博客模板古典系列之――江南墨卷" />
-    <link href="{% static 'css/base.css' %} " rel="stylesheet">
-    <link href="{% static 'css/index.css' %}" rel="stylesheet">
-    <style>
-            #page {list-style-type: none}
-            #page li{float:left;margin-left:10px;}
-</style>
-    <!--<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>-->
-    <!--[if lt IE 9]>
-    <script src="{% static 'js/modernizr.js' %}"></script>
-    <![endif]-->
-    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
-</head>
-<body>
-<div class="topnav">
-<a href="http://www.lushaozhen.com" target="_blank">江南墨卷</a>――作品来自<a href="http://www.lushaozhen.com" target="_blank">卢少珍个人博客网站</a>
-</div>
-<div id="wrapper">
-  <header>
-    <div class="headtop"></div>
-    <div class="contenttop">
-      <div class="logo f_l" text-align="center">江南墨卷</div>
-      <div class="search f_r">
-        <form action="/e/search/index.php" method="post" name="searchform" id="searchform">
-          <input name="keyboard" id="keyboard" class="input_text" value="请输入关键字" style="color: rgb(153, 153, 153);" onfocus="if(value=='请输入关键字'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='请输入关键字'}" type="text">
-          <input name="show" value="title" type="hidden">
-          <input name="tempid" value="1" type="hidden">
-          <input name="tbname" value="news" type="hidden">
-          <input name="Submit" class="input_submit" value="搜索" type="submit">
-        </form>
-      </div>
-      <div class="blank"></div>
-      <nav>
-        <div  class="navigation">
-          <ul class="menu">
-            <li><a href="/">网站首页</a></li>
-            <!--<li><a href="#">关于我</a>-->
-              <!--<ul>-->
-                <!--<li><a href="about.html">个人简介</a></li>-->
-                <!--<li><a href="listpic.html">个人相册</a></li>-->
-              <!--</ul>-->
-            <!--</li>-->
-            <!--<li><a href="#">我的日记</a>-->
-              <!--<ul>-->
-                <!--<li><a href="newslistpic.html">个人日记</a></li>-->
-                <!--<li><a href="newslistpic.html">学习笔记</a></li>-->
-              <!--</ul>-->
-            <!--</li>-->
-            <!--<li><a href="newslistpic.html">技术文章</a> </li>-->
-            <!--<li><a href="#">给我留言</a> </li>-->
-          </ul>
-        </div>
-      </nav>
-      <SCRIPT type=text/javascript>
-	// Navigation Menu
-	$(function() {
-		$(".menu ul").css({display: "none"}); // Opera Fix
-		$(".menu li").hover(function(){
-			$(this).find('ul:first').css({visibility: "visible",display: "none"}).slideDown("normal");
-		},function(){
-			$(this).find('ul:first').css({visibility: "hidden"});
-		});
-	});
-</SCRIPT>
-</div>
-</header>
-  <div class="jztop"></div>
-  <div class="container">
-    <div class="bloglist f_l">
-      {% block bloglist %}
-      {% endblock %}
-    </div>
-    <div class="r_box f_r">
-      <div class="tit01">
-        <h3 class="tit">关注我</h3>
-        <div class="gzwm">
-          <ul>
-            <li><a class="email" href="#" target="_blank">我的电话</a></li>
-            <li><a class="qq" href="#mailto:admin@admin.com" target="_blank">我的邮箱</a></li>
-            <li><a class="tel" href="#" target="_blank">我的QQ</a></li>
-            <li><a class="prize" href="#">个人奖项</a></li>
-          </ul>
-        </div>
-      </div>
-      <!--tit01 end-->
+    <title>Black &amp; White</title>
 
-      <div class="tuwen">
-        <h3 class="tit">图文推荐</h3>
-        <ul>
-          <!--<li><a href="/"><img src="images/01.jpg"><b>住在手机里的朋友</b></a>-->
-            <!--<p><span class="tulanmu"><a href="/">手机配件</a></span><span class="tutime">2015-02-15</span></p>-->
-          <!--</li>-->
-          <!--<li><a href="/"><img src="images/02.jpg"><b>教你怎样用欠费手机拨打电话</b></a>-->
-            <!--<p><span class="tulanmu"><a href="/">手机配件</a></span><span class="tutime">2015-02-15</span></p>-->
-          <!--</li>-->
-          <!--<li><a href="/" title="手机的16个惊人小秘密，据说99.999%的人都不知"><img src="images/03.jpg"><b>手机的16个惊人小秘密，据说...</b></a>-->
-            <!--<p><span class="tulanmu"><a href="/">手机配件</a></span><span class="tutime">2015-02-15</span></p>-->
-          <!--</li>-->
-          <!--<li><a href="/"><img src="images/06.jpg"><b>住在手机里的朋友</b></a>-->
-            <!--<p><span class="tulanmu"><a href="/">手机配件</a></span><span class="tutime">2015-02-15</span></p>-->
-          <!--</li>-->
-          <!--<li><a href="/"><img src="images/04.jpg"><b>教你怎样用欠费手机拨打电话</b></a>-->
-            <!--<p><span class="tulanmu"><a href="/">手机配件</a></span><span class="tutime">2015-02-15</span></p>-->
-          <!--</li>-->
-          <!--<li><a href="/"><img src="images/02.jpg"><b>教你怎样用欠费手机拨打电话</b></a>-->
-            <!--<p><span class="tulanmu"><a href="/">手机配件</a></span><span class="tutime">2015-02-15</span></p>-->
-          <!--</li>-->
-          <!--<li><a href="/" title="手机的16个惊人小秘密，据说99.999%的人都不知"><img src="images/03.jpg"><b>手机的16个惊人小秘密，据说...</b></a>-->
-            <!--<p><span class="tulanmu"><a href="/">手机配件</a></span><span class="tutime">2015-02-15</span></p>-->
-          <!--</li>-->
-        </ul>
-      </div>
-      <div class="ph">
-        <h3 class="tit">点击排行</h3>
-        <ul class="rank">
-          <!--<li><a href="/jstt/bj/2017-07-13/784.html" title="【心路历程】请不要在设计这条路上徘徊啦" target="_blank">【心路历程】请不要在设计这条路上徘徊啦</a></li>-->
-          <!--<li><a href="/news/s/2016-05-20/751.html" title="IP要突破2000+了" target="_blank">IP要突破2000+了</a></li>-->
-          <!--<li><a href="/jstt/web/2015-07-03/749.html" title="帝国cms首页、自定义页面如何实现分页" target="_blank">帝国cms首页、自定义页面如何实现分页</a></li>-->
-          <!--<li><a href="/jstt/web/2015-02-25/745.html" title="【已评选】给我模板PSD源文件，我给你设计HTML！" target="_blank">【已评选】给我模板PSD源文件，我给你设计HTML！</a></li>-->
-          <!--<li><a href="/jstt/bj/2015-02-14/744.html" title="【郑重申明】本站只提供静态模板下载！" target="_blank">【郑重申明】本站只提供静态模板下载！</a></li>-->
-          <!--<li><a href="/news/s/2015-01-23/741.html" title="【孕期日记】生活本该如此" target="_blank">【孕期日记】生活本该如此</a></li>-->
-          <!--<li><a href="/jstt/bj/2015-01-09/740.html" title="【匆匆那些年】总结个人博客经历的这四年…" target="_blank">【匆匆那些年】总结个人博客经历的这四年…</a></li>-->
-          <!--<li><a href="/jstt/web/2015-01-01/739.html" title=" 2014年度优秀个人博客排名公布" target="_blank"> 2014年度优秀个人博客排名公布</a></li>-->
-          <!--<li><a href="/jstt/web/2014-12-18/736.html" title="2014年度优秀个人博客评选活动" target="_blank">2014年度优秀个人博客评选活动</a></li>-->
-          <!--<li><a href="/jstt/css3/2014-12-09/734.html" title="使用CSS3制作文字、图片倒影" target="_blank">使用CSS3制作文字、图片倒影</a></li>-->
-          <!--<li><a href="/jstt/css3/2014-11-18/733.html" title="【分享】css3侧边栏导航不同方向划出效果" target="_blank">【分享】css3侧边栏导航不同方向划出效果</a></li>-->
-          <!--<li><a href="/jstt/bj/2014-11-06/732.html" title="分享我的个人博客访问量如何做到IP从10到600的(图文)" target="_blank">分享我的个人博客访问量如何做到IP从10到600的(图文)</a></li>-->
-        </ul>
-      </div>
-      <!--<div class="ad"> <img src="images/03.jpg"> </div>-->
-    </div>
-  </div>
-  <!-- container代码 结束 -->
-  <div class="jzend"></div>
-  <footer>
-    <div class="footer">
-      <div class="f_l">
-        <p>All Rights Reserved 版权所有：<a href="http://www.lushaozhen.com">卢少珍个人博客</a> 备案号：蜀ICP备00000000号</p>
-      </div>
-      <div class="f_r textr">
-        <p>Design by DanceSmile</p>
-      </div>
-    </div>
-  </footer>
+    <!-- meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- css -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="{% static 'css/pace.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <style type="text/css">
+        .bottom_footer {
+            position: fixed;
+            bottom: 0px;
+        }
+    </style>
+
+    <!-- js -->
+    <script src="{% static 'js/jquery-2.1.3.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/pace.min.js' %}"></script>
+    <script src="{% static 'js/modernizr.custom.js' %}"></script>
+</head>
+
+<body>
+<div class="container">
+    <header id="site-header">
+        <div class="row">
+            <div class="col-md-4 col-sm-5 col-xs-8">
+                <div class="logo">
+                    <h1><a href="index.html"><b>python </b> &amp; 小智</a></h1>
+                </div>
+            </div><!-- col-md-4 -->
+            <div class="col-md-8 col-sm-7 col-xs-4">
+                <nav class="main-nav" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" id="trigger-overlay" class="navbar-toggle">
+                            <span class="ion-navicon"></span>
+                        </button>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="cl-effect-11"><a href="index.html" data-hover="首页">首页</a></li>
+                            <li class="cl-effect-11"><a href="full-width.html" data-hover="博客">博客</a></li>
+                            <li class="cl-effect-11"><a href="about.html" data-hover="关于">关于</a></li>
+                            <li class="cl-effect-11"><a href="contact.html" data-hover="联系">联系</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </nav>
+                <div id="header-search-box">
+                    <a id="search-menu" href="#"><span id="search-icon" class="ion-ios-search-strong"></span></a>
+                    <div id="search-form" class="search-form">
+                        <form role="search" method="get" id="searchform" action="#">
+                            <input type="search" placeholder="搜索" required>
+                            <button type="submit"><span class="ion-ios-search-strong"></span></button>
+                        </form>
+                    </div>
+                </div>
+            </div><!-- col-md-8 -->
+        </div>
+    </header>
 </div>
+<div class="copyrights">Modified by <a href="http://zmrenwu.com/">追博客</a></div>
+
+<div class="content-body">
+    <div class="container">
+        <div class="row">
+            <main class="col-md-8">
+                {% block bloglist %}
+                {% endblock %}
+
+            </main>
+            <aside class="col-md-4">
+                <div class="widget widget-recent-posts">
+                    <h3 class="widget-title">最新文章</h3>
+                    <ul>
+                        {% block news_article %}
+                        {% endblock %}
+                        <!--<li>-->
+                            <!--<a href="#">Django 博客开发入门教程：前言</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">Django 博客使用 Markdown 自动生成文章目录</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">部署 Django 博客</a>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+                <div class="widget widget-archives">
+                    <h3 class="widget-title">归档</h3>
+                    <ul>
+                        {% block news_time %}
+                        {% endblock %}
+                        <!--<li>-->
+                            <!--<a href="#">2018 年 9 月</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">2018 年 10 月</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">2018 年 12 月</a>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+
+                <div class="widget widget-category">
+                    <h3 class="widget-title">分类</h3>
+                    <ul>
+                        <li>
+                            <a href="#">Django 博客教程 <span class="post-count">(13)</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Python 教程 <span class="post-count">(11)</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Django 用户认证 <span class="post-count">(8)</span></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="widget widget-tag-cloud">
+                    <h3 class="widget-title">标签云</h3>
+                    <ul>
+                        <li>
+                            <a href="#">Django</a>
+                        </li>
+                        <li>
+                            <a href="#">Python</a>
+                        </li>
+                        <li>
+                            <a href="#">Java</a>
+                        </li>
+                        <li>
+                            <a href="#">笔记</a>
+                        </li>
+                        <li>
+                            <a href="#">文档</a>
+                        </li>
+                        <li>
+                            <a href="#">AngularJS</a>
+                        </li>
+                        <li>
+                            <a href="#">CSS</a>
+                        </li>
+                        <li>
+                            <a href="#">JavaScript</a>
+                        </li>
+                        <li>
+                            <a href="#">Snippet</a>
+                        </li>
+                        <li>
+                            <a href="#">jQuery</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="rss">
+                    <a href=""><span class="ion-social-rss-outline"></span> RSS 订阅</a>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer id="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Mobile Menu -->
+<div class="overlay overlay-hugeinc">
+    <button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
+    <nav>
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="full-width.html">博客</a></li>
+            <li><a href="about.html">关于</a></li>
+            <li><a href="contact.html">联系</a></li>
+        </ul>
+    </nav>
+</div>
+
+<script src="{% static 'js/script.js' %}"></script>
+
 </body>
 </html>

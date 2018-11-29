@@ -23,8 +23,8 @@ def upload_to_goods_img(instance, filename):
 
 
 class Article(models.Model):
-    category = models.ForeignKey(Category, verbose_name='分类')
-    user = models.ForeignKey(User)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='分类')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField("标题", max_length=128)
     description = models.CharField("描述", max_length=256)
     article = models.TextField("文章")
@@ -38,6 +38,4 @@ class Article(models.Model):
     class Meta:
         verbose_name = "文章信息"
         verbose_name_plural = "文章信息"
-
-
 

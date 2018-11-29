@@ -5,5 +5,5 @@ app_name = 'article'
 
 urlpatterns = [
     url(r"^index/$", view=IndexView.as_view(), name='index'),
-    url(r'^(?P<pk>\d+)/$', DetailView_.as_view(), name="detail"),
+    url(r'^(?P<pk>\d+)/$', view=DetailView_.as_view(), name="detail"),
 ]

@@ -8,7 +8,7 @@ admin.site.site_title = '小智的blog'
 
 class ArticleAdmin(admin.ModelAdmin):
     # 控制展示的字段
-    list_display = ['title', 'create_time', 'description']
+    list_display = ['title', 'create_time', 'description', 'img']
     # 创建和修改是展示的字段
     # fields
     # 可以查询的字段
@@ -46,6 +46,7 @@ class CategoryAdmin(admin.ModelAdmin):
     def delete_model(self, request, obj):
         obj.status = 1
         obj.save()
+
 
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Category, CategoryAdmin)
