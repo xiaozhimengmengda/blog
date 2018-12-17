@@ -1,6 +1,10 @@
 import os
+import sys
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, BASE_DIR)
+sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
+
 SECRET_KEY = '0b%uwiq*=%4)qg_llo12n!ij5(*pm3^_gcu6cw*5#-z36b$hpg'
 
 
@@ -17,6 +21,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'article.apps.ArticleConfig',
     'user.apps.UserConfig',
+    'DjangoUeditor',
+    'xadmin',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [

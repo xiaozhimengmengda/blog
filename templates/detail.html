@@ -6,7 +6,7 @@
                             <a href="{% url 'article:detail' object.pk %}">{{ obj.title }}</a>
                         </h1>
                         <div class="entry-meta">
-                            <span class="post-category"><a href="{% url 'article:detail' object.pk %}">{{ object.title }}</a></span>
+                            <span class="post-category"><a href="{% url 'article:detail' object.pk %}">{{ object.category }}</a></span>
                             <span class="post-date"><a href="#"><time class="entry-date"
                                                                       datetime="{{ object.create_time }}">{{ object.create_time }}</time></a></span>
                             <!--<span class="post-author"><a href="#">追梦人物</a></span>-->
@@ -15,7 +15,7 @@
                         </div>
                     </header>
                     <div class="entry-content clearfix">
-                        <img src="{{ object.img.url }}" alt="{{ object.title }}" style="width:550px; height: 300px;">
+                        <!--<img src="{{ object.img.url }}" alt="{{ object.title }}" style="width:550px; height: 300px;">-->
                         <ul>
                             <p> {{ object.article|safe }}</p>
 

@@ -8,7 +8,7 @@ admin.site.site_title = '小智的blog'
 
 class ArticleAdmin(admin.ModelAdmin):
     # 控制展示的字段
-    list_display = ['title', 'create_time', 'description', 'img']
+    list_display = ['title', 'create_time', 'description', 'title']
     # 创建和修改是展示的字段
     # fields
     # 可以查询的字段

@@ -14,14 +14,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
+from django.urls import path
 from django.contrib import admin
 from django.views.generic import RedirectView
 from django.urls import reverse_lazy
 from django.conf import settings
 from django.conf.urls.static import static
 
+import xadmin
+import DjangoUeditor
+
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
+    path('ueditor/',include('DjangoUeditor.urls' )),
+    path('xadmin/', xadmin.site.urls),
     url(r'^article/', include("article.urls")),
     url(r'^$', RedirectView.as_view(url=reverse_lazy('article:index'))),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
